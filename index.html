@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Lista de Paises</title>
+</head>
+
+<body>
+    <nav>
+        <h2 class="title-nav">Listado de Paises</h2>
+    </nav>
+
+    <!-- MAINCONTENT --- LLamada a WEB COMPONENT -->
+    <section class="sPaises">
+        <paises-component></paises-component>
+    </section>
+
+    <!-- Modal -->
+    <div class="box-modal">
+        <div class="modal">
+            <h2 id="box-modal-title">Continente</h2>
+            <h4><span id="continente">xxxxxxxxxx</span></h4>
+            <button id="box-modal-button">
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    <script id="call">
+        let modalContainer = document.querySelector(".box-modal");
+
+        function callContinente(param) {
+            let titleModal = document.getElementById("box-modal-title");
+            let continenteModal = document.getElementById("continente");
+            //continenteModal.textContent = snombreRegion;
+            modalContainer.classList.add('show');
+        }
+
+        let btnCloseModal = document.getElementById("box-modal-button");
+        btnCloseModal.addEventListener('click', () => {
+            modalContainer.classList.remove("show");
+        })
+    </script>
+
+    <script src="index.js"></script>
+</body>
+
+<footer class="footer-main">
+    <div class="footer">
+        <p>Teléfono de atención al cliente: ... 777 777 777
+    </div>
+
+    <div class="bottom-in-footer">
+        <p>©2021 XXXX. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+</html>
